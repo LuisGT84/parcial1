@@ -1,91 +1,120 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- Configuración básica de la página -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil de Usuario - Parcial 1</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil de Usuario - Parcial 1</title>
 
-    <!-- Enlace a estilos externos -->
-    <link rel="stylesheet" href="css/styles.css">
+  <!-- estilos externos-->
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Encabezado principal -->
-    <h1>Bienvenido a mi Perfil</h1>
-    <h2>Información Personal</h2>
-    <h3>Datos básicos</h3>
+  <!-- (encabezados) -->
+  <h1>Mi Perfil</h1>
+  <h2>Información Personal</h2>
+  <h3>Datos básicos y contacto</h3>
 
-    <!-- Párrafo de introducción -->
-    <p>Este es un ejemplo de perfil de usuario para el examen parcial. Aquí se muestran diferentes elementos de HTML.</p>
+  <section class="card">
+    <!-- info personal-->
+    <p>Hola, soy <strong>Luis Tejeda</strong>, estudiante de <em>Ingeniería en Sistemas</em> en Guatemala. Este sitio forma parte del Parcial 1 y sirve para demostrar el uso correcto de HTML, CSS y JS con manipulación del DOM.</p>
+  </section>
 
-    <!-- Imagen de perfil -->
-    <img src="img/foto.jpg" alt="Foto de perfil" width="200" id="perfil">
-
-    <!-- Enlaces -->
-    <p>
-        Visita mi 
-        <a href="https://github.com/LuisGT84" target="_blank">GitHub</a> 
-        o mi 
-        <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>.
-    </p>
-
-    <!-- Lista no ordenada -->
-    <h2>Habilidades</h2>
-    <ul>
-        <li>HTML y CSS</li>
-        <li>JavaScript</li>
-        <li>IoT y electrónica</li>
-    </ul>
-
-    <!-- Lista ordenada -->
-    <h2>Pasos para usar esta página</h2>
-    <ol>
-        <li>Leer la información.</li>
-        <li>Completar el formulario.</li>
-        <li>Explorar la tabla.</li>
-    </ol>
-
-    <!-- Tabla con información -->
-    <h2>Tabla de Información del Usuario</h2>
-    <table border="1">
-        <tr>
+  <!--grid simple con foto + datos (sin Bootstrap aún, solo CSS propio) -->
+  <section class="card">
+    <!-- Uso una grilla de 2 columnas en pantallas medianas -->
+    <div class="grid-2">
+      <div>
+        <!-- Imagen de perfil -->
+        <img id="perfil" src="img/foto.jpg" alt="Foto de perfil de Luis Tejeda" width="220">
+        <!-- Nota: la animación de hover está en CSS -->
+      </div>
+      <div>
+        <!-- Tabla con información (requisito) -->
+        <h2>Tabla de Información del Usuario</h2>
+        <table>
+          <tr>
             <th>Dato</th>
             <th>Valor</th>
-        </tr>
-        <tr>
+          </tr>
+          <tr>
             <td>Nombre</td>
             <td>Luis Tejeda</td>
-        </tr>
-        <tr>
+          </tr>
+          <tr>
+            <td>País</td>
+            <td>Guatemala</td>
+          </tr>
+          <tr>
             <td>Carrera</td>
             <td>Ingeniería en Sistemas</td>
-        </tr>
-        <tr>
-            <td>Email</td>
-            <td>ltejedah@miumg.edu.gt</td>
-        </tr>
-    </table>
+          </tr>
+          <tr>
+            <td>Correo</td>
+            <td><a href="mailto:ltejedah@miumg.edu.gt">ltejedah@miumg.edu.gt</a></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </section>
 
-    <!-- Formulario -->
+  <!-- HABILIDADES: lista no ordenada (requisito) -->
+  <section class="card">
+    <!-- lista de habilidades -->
+    <h2>Habilidades</h2>
+    <ul>
+      <li>HTML, CSS y diseño responsivo</li>
+      <li>JavaScript (DOM) y jQuery</li>
+      <li>Proyectos IoT (sensores/actuadores)</li>
+    </ul>
+  </section>
+
+  <!-- PASOS: lista ordenada -->
+  <section class="card">
+    <h2>Pasos para usar este sitio</h2>
+    <ol>
+      <li>Revisar la información personal.</li>
+      <li>Completar y enviar el formulario.</li>
+      <li>Probar interacciones del DOM (se agregan en JS).</li>
+    </ol>
+  </section>
+
+  <!-- ENLACES: mínimo 2 -->
+  <section class="card">
+    <!-- Comentario de autor (yo): dejo enlaces útiles para evaluación -->
+    <h2>Enlaces</h2>
+    <p>
+      Mi perfil en 
+      <a href="https://github.com/LuisGT84" target="_blank" rel="noopener noreferrer">GitHub</a>
+      y una referencia a 
+      <a href="https://getbootstrap.com/" target="_blank" rel="noopener noreferrer">Bootstrap</a>.
+    </p>
+  </section>
+
+  <!-- FORMULARIO: con input texto, correo, textarea y submit -->
+  <section class="card">
     <h2>Formulario de Contacto</h2>
     <form id="formulario">
-        <!-- Input de texto -->
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre"><br><br>
+      <!-- Los name/id ayudan luego a DOM, validación y localStorage -->
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre">
 
-        <!-- Input de correo -->
-        <label for="correo">Correo:</label>
-        <input type="email" id="correo" name="correo"><br><br>
+      <label for="correo">Correo:</label>
+      <input type="email" id="correo" name="correo" placeholder="tucorreo@ejemplo.com">
 
-        <!-- Textarea -->
-        <label for="mensaje">Mensaje:</label><br>
-        <textarea id="mensaje" name="mensaje" rows="4" cols="40"></textarea><br><br>
+      <label for="mensaje">Mensaje:</label>
+      <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe tu mensaje"></textarea>
 
-        <!-- Botón submit -->
-        <input type="submit" value="Enviar">
+      <input type="submit" value="Enviar">
     </form>
+  </section>
 
-    <!-- Enlace a JavaScript -->
-    <script src="js/script.js"></script>
+  <!-- Párrafo objetivo para futura manipulación del DOM -->
+  <section class="card">
+    <h2>Área de pruebas del DOM</h2>
+    <p id="mensaje-dom">Este texto cambiará con un botón desde JavaScript.</p>
+  </section>
+
+  <!-- Enlace a JS -->
+  <script src="js/script.js"></script>
 </body>
 </html>

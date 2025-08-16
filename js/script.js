@@ -22,7 +22,7 @@ document.body.appendChild(botonFondo);
 botonFondo.addEventListener("click", () => {
   const colores = ["#0f172a", "#1a202c", "#2d3748", "#4a5568"];
   const random = colores[Math.floor(Math.random() * colores.length)];
-  document.body.style.backgroundColor = random;
+  document.body.style.background = random;
   localStorage.setItem("colorFondo", random); // guardar en localStorage
 });
 

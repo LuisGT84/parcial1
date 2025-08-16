@@ -223,3 +223,28 @@ h3 + p, p + img, p + p { margin-top: 8px; }
   body { gap: 28px; padding: 40px 28px; }
   table th, table td { padding: 14px 16px; }
 }
+/* ---------------------------
+   botones
+--------------------------- */
+
+button {
+  display: inline-block;
+  margin: 10px auto;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: var(--primary);
+  color: #06283a;
+  font-weight: 600;
+  transition: background .2s ease;
+}
+button:hover {
+  background: var(--primary-strong);
+}
+
+/* Centrarlos */
+body > button {
+  display: block;
+  margin: 10px auto;
+}
